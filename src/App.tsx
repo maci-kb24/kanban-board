@@ -52,6 +52,7 @@ function App() {
     <div className="flex divide-x">
       {columns.map((column) => (
         <div
+          key={column.status}
           onDrop={(e) => handleDrop(e, column.status)}
           onDragOver={(e) => e.preventDefault()}
           onDragEnter={() => handleDragEnter(column.status)}
@@ -64,6 +65,7 @@ function App() {
           {column.tasks.map((task) => (
             <TaskCard
               task={task}
+              key={task.id}
               updateTask={updateTask}
             />
           ))}
